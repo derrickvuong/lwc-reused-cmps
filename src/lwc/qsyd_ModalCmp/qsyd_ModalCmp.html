@@ -1,0 +1,21 @@
+<template>
+    <section tabindex="-1" class="slds-modal" aria-modal="true">
+        <div class="slds-modal__container">
+            <header>
+                <lightning-button-icon class="slds-modal__close" size="large" icon-name="utility:close" alternative-text="Close" variant="bare" onclick={toggleModal}></lightning-button-icon>
+                <h2 class="slds-modal__title slds-hyphenate">
+                    <slot name="header" onslotchange={handleHeaderSlotChange}></slot>
+                </h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium">
+                <slot></slot>
+            </div>
+            <footer>
+                <slot name="footer" onslotchange={handleFooterSlotChange}></slot>
+                <!-- <button class="slds-button slds-button_neutral">Cancel</button>
+                <button class="slds-button slds-button_brand">Save</button> -->
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop"></div>
+</template>
